@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+//creating custom hook useFetchProducts to fetch api
 export const useFetchProducts = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
