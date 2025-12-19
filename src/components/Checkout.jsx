@@ -7,16 +7,16 @@ import { useSelector } from "react-redux";
 export default function Checkout() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const items = useSelector((state) => state.cart?.items || []);
+  const items = useSelector((state) => state.cart.items || []);
 
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
+//if order placed then clear items and go to home page
   const placeOrder = () => {
     alert("Order placed");
     dispatch(clearCart());
     navigate("/");
   };
-
+  //calculate price and total amount
   return (<>
     <div className="ml-20 border-2 rounded-lg mt-5 w-180 p-10">
       <h1 className="text-2xl font-bold mb-4">Checkout</h1>
