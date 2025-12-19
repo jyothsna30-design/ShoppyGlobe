@@ -1,7 +1,7 @@
 
 import { useLocation } from "react-router-dom";
-export default function NotFound() {
-
+function NotFound() {
+  //display error message with pathname
   const location = useLocation();
   return (
     <div className="m-50 text-5xl font-extrabold">
@@ -11,3 +11,4 @@ export default function NotFound() {
     </div>
   );
 }
+export default NotFound;
