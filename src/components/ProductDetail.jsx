@@ -7,13 +7,13 @@ export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const dispatch = useDispatch();
-
+//fetches specific id product and renders when id changes 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
       .then(res => res.json())
       .then(setProduct);
   }, [id]);
-
+  //if product is empty then show Loading...
   if (!product) return <p>Loading...</p>;
 
   return (
