@@ -2,12 +2,9 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
 import { Link } from "react-router-dom";
 
-export default function ProductItem({ product }) {
+function ProductItem({ product }) {
   const dispatch = useDispatch();
-   
-  
-
-
+  //display items, add to cart and link to view details. 
   return (<>
          <div className="border-0 rounded-lg m-5 hover:scale-110 w-50 h-60">
       <img loading="lazy" src={product.thumbnail} className="h-30  bg-gray-300"/>
@@ -18,9 +15,7 @@ export default function ProductItem({ product }) {
       </button>
       <Link className="border-2 rounded-lg bg-gray-200" to={`/product/${product.id}`}>View</Link>
       </div>
-</>
-   
-     
-    
+</>    
   );
 }
+export default ProductItem;
