@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchQuery } from "../features/cart/products/searchSlice";
-import { selectTotalCartItems } from "../features/cart/cartSelectors";
-
 
 function Header() {
   const dispatch = useDispatch();
-  const cartCount = useSelector(selectTotalCartItems);
+  //calculating cart items
+  const cartCount = useSelector((state) => state.cart.items?.reduce((total, item) => total + item.quantity, 0) || 0);
 
   const handleSearch = (e) => {
     dispatch(setSearchQuery(e.target.value));
@@ -15,12 +14,12 @@ function Header() {
   return (
     <header className="border-2 bg-violet-950 ">
       <nav className="flex text-white">
-      
+      {/*logo*/}
         <Link to="/" className="font-extrabold m-3 text-xl">
           ShoppyGlobe
         </Link>
 
-        {/* Search */}
+        {/* Search bar */}
         <input
           type="text"
           placeholder="Search products..."
