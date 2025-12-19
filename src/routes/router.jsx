@@ -8,6 +8,7 @@ import Layout from "../components/Layout.jsx";
 
 export const router = createBrowserRouter([
   {
+    //createbrowserrouter, it includes layout for all children components
     path: "/",
     element:<Layout />,
     errorElement: <NotFound />,
