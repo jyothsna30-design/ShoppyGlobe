@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <header className="border-2 bg-violet-950 ">
-      <nav className="flex text-white">
+      <nav className="flex flex-col md:flex-row md:items-center text-white">
       {/*logo*/}
         <Link to="/" className="font-extrabold m-3 text-xl">
           ShoppyGlobe
@@ -24,11 +24,11 @@ function Header() {
           type="text"
           placeholder="Search products..."
           onChange={handleSearch}
-          className="mt-3 ml-100 mb-3 border-2 rounded-lg bg-white text-black"
+          className="mt-3 ml-10 mb-3 border-2 rounded-lg bg-white text-black md:ml-100"
         />
 
         {/* Navigation Links */}
-        <div className=" ml-80 mt-3">
+        <div className=" lg:ml-80 mt-3 ">
           <Link to="/" className="mr-3">Home</Link>
           <Link to="/cart" className="cart-link">
             🛒 Cart <span className="cart-count">({cartCount})</span>
