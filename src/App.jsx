@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -10,7 +10,9 @@ const ProductList = React.lazy(() => import("./components/ProductList"));
 function App() {
   return (
     <>
+    <Suspense fallback={<p>Loading...</p>}>
      <ProductList></ProductList>
+     </Suspense>
     </>
   );
 }
