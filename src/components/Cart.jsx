@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
-import CartItem from "./CartItem";
 import { Link } from "react-router-dom";
+import React, { Suspense } from "react"
+
+const CartItem = React.lazy(() => import("./CartItem"));
 
 function Cart() {
   //getting cart items
@@ -14,11 +16,12 @@ function Cart() {
      <>{/*sending props to cartItem*/}
     <div className="flex flex-wrap" >
       {items.map(item => (
-        <CartItem key={item.id} item={item} />
+        <Suspense key={item.id} fallback={<p>Loading....</p>}>
+        <CartItem key={item.id} item={item} /></Suspense>
       ))}
     </div>
         {/*link to checkout*/}
-     <div className="border-0 p-1 rounded-lg w-30 ml-130 mt-9 underline text-xl bg-amber-600" >
+     <div className="border-0 p-1 rounded-lg w-30 md:ml-130 mt-9 underline text-xl bg-amber-600 " >
     <Link to="/checkout">Checkout</Link>
     </div>
   </>)
