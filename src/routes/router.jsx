@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import ProductDetail from "../components/ProductDetail.jsx";
-import Cart from "../components/Cart.jsx";
-import Checkout from "../components/Checkout.jsx";
-import NotFound from "../components/NotFound.jsx";
-import Layout from "../components/Layout.jsx";
+import React from "react";
+const ProductDetail = React.lazy(()=> import ("../components/ProductDetail.jsx"));
+const Cart = React.lazy(()=> import ("../components/Cart.jsx"));
+const Checkout = React.lazy(()=> import ("../components/Checkout.jsx"));
+const NotFound = React.lazy(()=> import ("../components/NotFound.jsx"));
+const Layout = React.lazy(()=> import ("../components/Layout.jsx"));
+
 
 export const router = createBrowserRouter([
   {
